@@ -1,0 +1,64 @@
+.hero {
+    height: calc(100vh - 60px);
+    width: 100%;
+    background-image: url('https://images.unsplash.com/photo-1679502459751-f51ccf9db45c?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxlZGl0b3JpYWwtZmVlZHwzfHx8ZW58MHx8fHw%3D&auto=format&fit=crop&w=1000&q=60');
+    background-size: cover;
+    background-color: rgba(0, 0, 0, 0.4);
+    background-blend-mode: darken;
+}
+
+.hero_wrapper {
+    width: 100%;
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+.hero_wrapper h2 {
+    font-size: 46px;
+    font-weight: 600;
+    color: white;
+    white-space: nowrap;
+    margin-bottom: 2.5rem;
+}
+
+.hero_wrapper h5 {
+    color: #efefef;
+    font-size: 1rem;
+    margin-bottom: 3rem;
+}
+
+.hero_wrapper .options {
+    width: 60%;
+    background-color: #fff;
+    padding: 1.2rem 1rem;
+    border-radius: 20px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.hero_wrapper .options select {
+    height: 40px;
+    width: 20%;
+    outline: none;
+    border: none;
+    padding: 0.25rem 0.75rem;
+    color: black;
+    background-color: lightblue;
+    font: size 18px;
+    border-radius: 12px;
+    cursor: pointer;
+}
+
+.options .SearchIcon {
+    padding: 0.6rem;
+    width: 40px;
+    height: 40px;
+    border-radius: 50%;
+    background: linear-gradient(90deg, rgb(86, 164, 170) 0%, rgb(149, 231, 244) 35%, rgb(103, 205, 216) 100%);
+    fill: #000;
+    cursor: pointer;
+}

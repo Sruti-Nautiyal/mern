@@ -1,0 +1,155 @@
+.nav {
+    position: sticky;
+    top: 0;
+    left: 0;
+    height: 60px;
+    width: 100%;
+    z-index: 9999;
+    background-color: #409998;
+    border-bottom: 1px solid #888;
+}
+
+.wrapper {
+    max-width: 100vw;
+    margin: 0 auto;
+    height: 100%;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 0.25rem 1.25rem;
+}
+
+.left {
+    text-decoration: none;
+    font-size: 26px;
+    font-weight: bold;
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
+    color: #ffffff;
+}
+
+.center {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 1.25rem;
+    list-style: none;
+    cursor: pointer;
+    font-size: 18px;
+}
+
+.center a {
+    text-decoration: none;
+}
+
+.center .listItem {
+    color: #ffffff;
+    transition: 150ms all ease-in-out;
+}
+
+.center .listItem:hover {
+    color: #ffffff;
+}
+
+.right {
+    display: flex;
+    align-items: center;
+    gap: 0.75rem;
+    color: #fff;
+}
+
+.right a:first-child {
+    padding: 0.4rem 1.2rem;
+    background-color: #12cbd1;
+    color: #fff;
+    border: 1px solid transparent;
+    border-radius: 12px;
+    font-size: 18px;
+    cursor: pointer;
+    transition: 150ms all;
+}
+
+.right a:first-child:hover {
+    border-color: #12cbd1;
+    color: #12cbd1;
+    background-color: #fff;
+}
+
+.right a:nth-child(2) {
+    color: #12cbd1;
+    font-size: 18px;
+    cursor: pointer;
+}
+
+.right .list {
+    text-decoration: none;
+    color: #fff;
+}
+
+.right .list {
+    text-decoration: none;
+    padding: 0.25rem 0.75rem;
+    background-color: #033d3f;
+    color: #fff;
+    border-radius: 12px;
+    transition: 150ms all;
+    cursor: pointer;
+}
+
+.right .list:hover {
+    color: #033d3f;
+    background-color: #fff;
+}
+
+.lpropertyForm {
+    position: absolute;
+    top: 0;
+    right: 0;
+    height: 90vh;
+    width: 100vw;
+    background-color: rgb(255, 255, 255);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    z-index: 999999999999;
+}
+
+.lpropertyWrap {
+    position: relative;
+    background-color: #fff;
+    height: 90vh;
+    width: 50vw;
+    border-radius: 20px;
+}
+
+.lpropertyWrap h2 {
+    text-align: center;
+    margin: 1rem 0;
+    margin-bottom: 1rem;
+}
+
+.lpropertyWrap .f div label {
+    display: flex;
+    align-items: center;
+    gap: 0.2rem;
+    font-size: 18px;
+    margin-right: 1rem;
+}
+
+.lpropertyWrap button {
+    margin-top: 0.3rem;
+}
+
+.picon {
+    position: absolute;
+    top: 1rem;
+    right: 1rem;
+    font-size: 22px;
+    cursor: pointer;
+}
+
+/* .logoutBtn,
+.sp {
+    color: #fff;
+} */

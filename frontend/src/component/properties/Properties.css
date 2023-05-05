@@ -1,0 +1,204 @@
+.containerp {
+    height: 100%;
+    width: 100%;
+    margin-top: 2.5rem;
+}
+
+.wrapperp {
+    max-width: 1180px;
+    height: 100%;
+    margin: 0 auto;
+}
+
+.titlesp {
+    margin-top: 5rem;
+    display: flex;
+    align-items: center;
+    flex-direction: column;
+    gap: 0.5rem;
+}
+
+.titlesp h5 {
+    color: #777;
+    font-size: 18px;
+    font-weight: 500;
+}
+
+.titlesp h2 {
+    color: #333;
+    font-size: 28px;
+}
+
+.wrapperp .optionsp {
+    width: 100%;
+    padding: 1.25rem 1.5rem;
+    border-radius: 20px;
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    /* copy & paste */
+    background: rgba(255, 255, 255, 0.2);
+    box-shadow: 0 8px 32px 0 rgba(31, 38, 135, 0.25);
+    backdrop-filter: blur(20px);
+    -webkit-backdrop-filter: blur(20px);
+    border-radius: 10px;
+    border: 1px solid rgba(255, 255, 255, 0.18);
+}
+
+.optionsp select {
+    height: 40px;
+    min-width: 160px;
+    max-width: 200px;
+    border: none;
+    outline: none;
+    padding: 0.25rem 0.75rem;
+    background-color: #12cbd1;
+    color: #fff;
+    border-radius: 12px;
+    font-size: 18px;
+    cursor: pointer;
+}
+
+.optionsp select:first-child {
+    color: #fff;
+}
+
+.optionsp .rangeInput {
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
+}
+
+.optionsp .searchBtn {
+    outline: none;
+    border: none;
+    width: 40px;
+    height: 40px;
+    cursor: pointer;
+    background-color: transparent;
+}
+
+.optionsp .searchBtn .icon {
+    border: 1px solid transparent;
+    border-radius: 50%;
+    padding: 0.6rem;
+    height: 100%;
+    width: 100%;
+    background: linear-gradient(90deg, rgb(7, 3, 73) 0%, rgb(14, 14, 132) 35%, rgb(32, 97, 219) 100%);
+    fill: #fff;
+}
+
+.optionsp .searchBtn:active .icon {
+    border: 1px solid #12cbd1;
+    fill: #15b3bb;
+    background: #fff;
+}
+
+
+/* individual property css */
+.propertiesp {
+    margin-top: 3rem;
+    width: 100%;
+    display: flex;
+    flex-wrap: wrap;
+    gap: 2rem;
+}
+
+.propertiesp .propertyp .imgContainer {
+    display: inline-block;
+    height: 350px;
+    width: 80%;
+    margin-bottom: 0.5rem;
+    overflow: hidden;
+    cursor: pointer;
+}
+
+.propertiesp .propertyp .imgContainer img {
+    height: 100%;
+    width: 100%;
+    object-fit: cover;
+    transition: 150ms all;
+}
+
+.propertiesp .propertyp .imgContainer img:hover {
+    scale: 1.035;
+}
+
+.propertiesp .owner {
+    height: 35px;
+    width: 35px;
+    border-radius: 50%;
+    object-fit: cover;
+}
+
+.propertyp .details {
+    display: flex;
+    flex-direction: column;
+    gap: 1rem;
+    padding: 0 0.5rem;
+}
+
+.propertyp .detailsp .priceAndOwnerp {
+    width: 80%;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.priceAndOwnerp .pricep {
+    font-weight: bold;
+    font-size: 18px;
+}
+
+.moreDetailsp {
+    display: flex;
+    align-items: center;
+    gap: 1.25rem;
+    margin-bottom: 0.5rem;
+}
+
+.moreDetailsp span {
+    display: flex;
+    align-items: center;
+    gap: 1rem;
+    border-right: 1px solid #12cbd1;
+    color: #12cbd1;
+    padding-right: 1.25rem;
+}
+
+.moreDetailsp span:last-child {
+    border: none;
+}
+
+.descp {
+    overflow: hidden;
+    text-overflow: ellipsis;
+    white-space: nowrap;
+    max-width: 250px;
+    font-size: 18px;
+    color: #222;
+}
+
+.noProperty {
+    text-align: center;
+    margin-top: 5rem;
+    font-size: 36px;
+    color: #222;
+}
+
+/* RESPONSIVE */
+
+@media only screen and (max-width: 992px) {
+    .wrapperp .optionsp {
+        width: 90%;
+        padding: 0.75rem 1rem;
+        margin: 0 auto;
+    }
+
+    .propertiesp {
+        justify-content: center;
+    }
+}
+
+
+@media only screen and (max-width: 768px) {}
