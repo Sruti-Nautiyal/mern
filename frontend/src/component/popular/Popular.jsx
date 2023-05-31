@@ -9,14 +9,13 @@ import { request } from '../../APIs/fetch'
 
 
 function Popular() {
-  const [numProperties,setNumPropeties]=useState([])
+  const [numProperties,setNumProperties]=useState([])
 
   useEffect(()=>{
     const fetchNumProperties = async()=>{
       try {
         const data=await request("/property/find/types","GET")
-        setNumPropeties(data)
-        //console.log(data)
+        setNumProperties(data)
       } catch (error) 
       {
         console.log(error.message)
@@ -28,23 +27,24 @@ function Popular() {
   return (
     <div className='popular'>
       <div className="popular_wrapper">
+        
         <div className="titles">
           <h5>Different types of Property</h5>
           <h2>Best type of properties</h2>
         </div>
         <div className="properties">
-          <Link className='property' to={`/properties?type=House&place=0&priceRange=1`}>
+          <Link className='property' to={{ pathname: '/Type', search: '?type=House' }}>
             <img src={img1} alt='image1'/>
             <div className="quantity"> {numProperties?.House} Properties
             </div>
             <h5>House Properties</h5>
           </Link>
-          <Link className='property' to={`/properties?type=Flat&place=0&priceRange=1`}>
+          <Link className='property' to={{ pathname: '/Type', search: '?type=Flat' }}>
             <img src={img2} alt='image1'/>
             <div className="quantity">{numProperties?.Flat} Properties</div>
             <h5>Flat Properties</h5>
           </Link>
-          <Link className='property' to={`/properties?type=Room&place=0&priceRange=1`}>
+          <Link className='property' to={{ pathname: '/Type', search: '?type=Room'} }>
             <img src={img3} alt='image1' />
             <div className="quantity">
               {numProperties?.Room} Properties</div>

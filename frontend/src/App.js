@@ -13,6 +13,7 @@ import SignIn from './component/signIn/SignIn';
 import SignUp from './component/signUp/SignUp';
 import About from './component/About/About';
 import Contact from './component/Contact/Contact';
+import Type from './component/Types/Type';
 
 function App() {
   return (
@@ -44,6 +45,7 @@ function App() {
             <Footer />
           </>
         } />
+        <Route path='/Type' element={<Type />} />
         <Route path='/Contact' element={<Contact />} />
         <Route path='/about' element={<About />} />
         <Route path='/Featured1' element={<Featured1 />} />

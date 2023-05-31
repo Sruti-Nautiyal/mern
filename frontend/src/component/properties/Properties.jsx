@@ -6,6 +6,7 @@ import { arrPriceRanges } from '../../APIs/price.js'
 import './Properties.css'
 import {AiOutlineSearch} from 'react-icons/ai'
 import {FaSquareFull,FaBed} from 'react-icons/fa'
+import axios from 'axios';
 
 function Properties() {
   const [allProperties,setAllProperties]=useState([])
@@ -14,7 +15,8 @@ function Properties() {
   const query=( useLocation().search).slice(1)
   const arrQuery=query.split("&")
   const navigate= useNavigate()
-
+  
+  console.log(allProperties)
 
   const handleState=(e)=>{
     setState(prev=>{
@@ -30,27 +32,19 @@ function Properties() {
     fetchAllProperties()
   },[])
 
-  useEffect(()=>{
-    if(arrQuery && allProperties?.length> 0 && state===null){
-      let formateQuery={}
-      arrQuery.forEach((option,idx)=>{
-        //console.log(option.split("="))
-        const key=option.split("=")[0]
-        const value=option.split("=")[1]
-
-
-        formateQuery={...formateQuery,[key]:value}
-        if(idx=== arrQuery.length-1){
-          setState(formateQuery)
-          //console.log(formateQuery)
-          //handleSearch(formateQuery)
-        }
-      })
+  useEffect(() => {
+    if (arrQuery && allProperties.length > 0 && state === null) {
+      const formateQuery = arrQuery.reduce((acc, option) => {
+        const [key, value] = option.split('=');
+        return { ...acc, [key]: value };
+      }, {});
+      setState(formateQuery);
     }
-  },[allProperties,arrQuery])
+  }, [allProperties, arrQuery]);
    //console.log(allProperties)
 
   const handleSearch = (param = state)=>{
+
     let opt
     console.log(state)
     if(param?.nativeEvent)
@@ -59,6 +53,11 @@ function Properties() {
     }else{
       opt=param
     }
+    if (!opt.type || !opt.place || !opt.priceRange) {
+      alert("Please define your search criteria.");
+      return;
+    }  
+
       const filterProperties =allProperties.filter((property)=>{
       const price=arrPriceRanges[opt.priceRange]
       const minPrice=Number(price.split('-')[0])
@@ -66,24 +65,28 @@ function Properties() {
       console.log(property.place,opt.place,)
 
       const place=placeToIdx(property.place)
-      console.log(property.type,opt.type.toLowerCase(),place,Number(opt.place))
-      if(property.type===opt.type.toLowerCase() && place===Number(opt.place) && property.price>=minPrice && property.price<=maxPrice)
+      console.log(property.type,opt.type,place,Number(opt.place))
+      if(property.type===opt.type && place===Number(opt.place) && property.price>=minPrice && property.price<=maxPrice)
       {
         return property
       }
     })
+    
 
     const queryStr=`type=${opt.type}&place=${opt.place}&priceRange=${opt.priceRange}`
 
     navigate(`/properties?${queryStr}`,{replace:true})
     setFilterProperties(filterProperties)
+    
 
   }
-
   return (
     <div className='containerp'>
+      <div className="welcome">
+          Welcome look for the properties you want
+        </div>
       <div className='wrapperp'>
-      <div className="optionsp">
+        <div className="optionsp">
           <select value={state?.type} name="type" onChange={handleState}>
             <option disabled>Select types</option>
             <option value='House'>House</option>
@@ -109,9 +112,9 @@ function Properties() {
           </select>
 
           <button className='searchBtn' >
-            <AiOutlineSearch className='icon' onClick={handleSearch}  />
+            <AiOutlineSearch className='icon'  onClick={handleSearch}  />
           </button>
-        </div>
+      </div>
         {filterProperties.length > 0 ?
           <>
             <div className='titlesp'>
@@ -119,7 +122,8 @@ function Properties() {
               <h2>Property you may like</h2>
             </div>
             <div className='propertiesp'>
-              {filterProperties?.map((property) => (
+              {filterProperties?.map((property) => {
+                return(
                 <div key={property._id} className='propertyp'>
                   <Link to={`/propertyDetail/${property._id}`} className='imgContainer'>
                     <img src={`http://localhost:5000/images/${property?.img}`} alt="" />
@@ -138,7 +142,7 @@ function Properties() {
                     </div>
                   </div>
                 </div>
-              ))}
+          )})}
             </div>
           </> : <h2 className='noProperty'>We have no properties with the specified options.</h2>}
       </div>

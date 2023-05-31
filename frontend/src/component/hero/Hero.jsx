@@ -1,7 +1,8 @@
 import React, { useState } from 'react'
 import './hero.css'
 import {AiOutlineSearch} from 'react-icons/ai'
-import { useNavigate } from 'react-router-dom'
+import { useNavigate,Link} from 'react-router-dom'
+import Properties from '../properties/Properties'
 
 export default function Hero() {
   const [type,setType]=useState("House")
@@ -21,9 +22,15 @@ export default function Hero() {
       <div className="hero_wrapper">
         <h2>Find your place to live </h2>
         <h5>Search for your perfect house</h5>
-        <div className="options">
-          <select onChange={(e)=>setType(e.target.value)}>
-            <option disabled>Select types</option>
+        <div>
+          <Link to={`/properties`}><button>
+            Lets's Get Started
+          </button>
+          </Link>
+        </div>
+         {/* <div className="options">
+          <select onChange={(e)=>setType(e.target.value)} placeholder='types'>
+            <option value='' disabled>Select types</option>
             <option value='House'>House</option>
             <option value='Flat'>Flat</option>
             <option value='Room'>Room</option>
@@ -48,7 +55,8 @@ export default function Hero() {
             <option value="5">Allahabad</option>
           </select>
           <AiOutlineSearch className='SearchIcon' onClick={handleSearch} />
-        </div>
+        </div>  */}
+        {/* <Properties/> */}
       </div>
       
     </div>

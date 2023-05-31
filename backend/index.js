@@ -9,7 +9,8 @@ const app = express()
 
 //Connect database
 mongoose.connect(process.env.MONGO_URL)
-app.use('/images', express.static('/public/images'))
+// app.use('/images', express.static('/public/images'))
+app.use(express.static('public'));
 
 
 

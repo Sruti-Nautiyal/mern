@@ -22,7 +22,7 @@ function Featured() {
     fetchFeatured()
   },[])
   //http://localhost:5000/property
-  //console.log(featureProps)
+  console.log(featureProps)
   return (
     <div className='feature'>
       <div className="feature_wrap">
@@ -34,14 +34,14 @@ function Featured() {
           {featureProps?.map((property)=>(
             <div key={property._id} className="featureProp">
               <Link to={`/propertyDetail/${property._id}`}className='imgContainer'>
-                <img src={`http://localhost:5000/images/${property?._img}`} alt=""/>
-                {/* {property.img} */}
+                <img src={`http://localhost:5000/images/${property?.img}`} alt=""/>
+               
               </Link>
               <div className="details">
                 <div className="priceAndOwner">
                   <span className='price'>{property?.price}
                   </span>
-                  <img scr={img} alt='' className='owner'/>
+                  <img src={img} alt='' className='owner'/>
                 </div>
                 <div className="moreDetails">
                   <span> {property?.beds} beds <FaBed className='iconf'/></span>

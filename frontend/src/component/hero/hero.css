@@ -62,3 +62,30 @@
     fill: #000;
     cursor: pointer;
 }
+
+button {
+    height: 5vh;
+    width: 18vw;
+    -webkit-appearance: button;
+    -webkit-writing-mode: horizontal-tb !important;
+    text-rendering: auto;
+    font-style: bold;
+    border: 1px solid black;
+    border-radius: 1rem;
+    cursor: pointer;
+    font: 500 0.9rem system-ui;
+    color: white;
+    background: #1bb6b1;
+
+}
+
+button:hover {
+    background: white;
+    color: #1bb6b1;
+}
+
+@media only screen and (max-width:600px) {
+    button {
+        font: 5/00 0.7rem system-ui;
+    }
+}

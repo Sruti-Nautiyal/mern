@@ -10,6 +10,21 @@
     margin: 0 auto;
 }
 
+.welcome {
+    margin: 2rem;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-weight: 600;
+    font-size: 1.5rem;
+    color: #222;
+    border-radius: 2rem;
+    background-color: #bcf5ee;
+    border: 0.5px solid #6ab9b4;
+    padding: 10px;
+    box-shadow: 2px 2px 5px rgba(145, 243, 238, 0.923);
+}
+
 .titlesp {
     margin-top: 5rem;
     display: flex;
@@ -182,8 +197,12 @@
 .noProperty {
     text-align: center;
     margin-top: 5rem;
-    font-size: 36px;
+    font-size: 1.7;
     color: #222;
+    background-color: #f0f0f0;
+    border: 1px solid #a39898;
+    padding: 10px;
+    box-shadow: 2px 2px 5px rgba(0, 0, 0, 0.3);
 }
 
 /* RESPONSIVE */

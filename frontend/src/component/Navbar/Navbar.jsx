@@ -120,4 +120,25 @@ export default function Navbar() {
       } 
     </div>
   )
+  return(
+    <nav className="nav">
+  <div className="wrapper">
+    <a className="left" href="#">Logo</a>
+    <button className="toggleBtn" aria-label="Toggle Navigation Menu">
+      <span className="icon"></span>
+    </button>
+    <ul className="center">
+      <li><a className="listItem" href="#">Home</a></li>
+      <li><a className="listItem" href="#">About</a></li>
+      <li><a className="listItem" href="#">Services</a></li>
+      <li><a className="listItem" href="#">Contact</a></li>
+    </ul>
+    <div className="right">
+      <a href="#">Login</a>
+      <a href="#">Signup</a>
+    </div>
+  </div>
+</nav>
+
+  )
 }
